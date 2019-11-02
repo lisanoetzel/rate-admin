@@ -20,15 +20,14 @@ router.post('/register', (req, res) => {
     if (!isValid) {
         return res.status(400).json(errors);
     }
-    user.findOne({ email: req.body.email }).then(user => {
-        if (user) {
+    user.findOne({ email: req.body.email }).then(DBuser => {
+        if (DBuser) {
             return res.status(400).json({ email: 'Email already exists' });
         } else {
             const newUser = new user({
                 name: req.body.name,
                 email: req.body.email,
                 password: req.body.password,
-                password2: req.body.password2,
             });
             //Hashing password before saving in DB
             bcrypt.genSalt(10, (err, salt) => {
@@ -38,7 +37,7 @@ router.post('/register', (req, res) => {
                     newUser
                         .save()
                         .then(user => res.json(user))
-                        .catch(err => console.log(err));
+                        .catch(err => res.json(err));
                 });
             });
         }
