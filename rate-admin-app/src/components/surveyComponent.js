@@ -73,7 +73,7 @@ export default class Survey extends Component {
             console.log(`Survey Q3: ${this.state.survey_q3}`);
 
             this.setState({
-                   survey_name: '',
+                    survey_name: '',
                     survey_title: '',
                     survey_institution: '',
                     survey_term: '',
