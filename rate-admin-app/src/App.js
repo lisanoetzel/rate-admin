@@ -8,6 +8,11 @@ import About from "./components/aboutComponent";
 import Account from "./components/accountComponent";
 import Survey from "./components/surveyComponent";
 
+import image from "./src/image";
+import image1 from "./src/image1";
+import image2 from "./src/image2";
+
+
 
 class App extends Component {
   render() {
@@ -15,7 +20,9 @@ class App extends Component {
       <Router>
          <div className="container">
            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+           <img src={image} width="30" height="30" alt="ThumbsUp" />
               <Link to="/" className="navbar-brand"><strong>Rate My Administrator</strong></Link>
+              <img src={image1} width="30" height="30" alt="ThumbsDown" />
               <div className="collapse navbar-collapse">
                 <ul className="navbar-nav mr-auto">
                   <li className="nav-item active">
@@ -26,6 +33,7 @@ class App extends Component {
                   </li>
                   <li className="nav-item active">
                   <Link to="/survey" className="nav-link">Survey</Link>
+                  <img src={image2} width="30" height="30" alt="combined" />
                   </li>
                 </ul>
               </div>
