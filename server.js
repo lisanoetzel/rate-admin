@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const passport = require("passport");
 
 const users = require('./routes/api/users');
+const administrators = require('./routes/api/administrators');
 
 const app = express();
 
@@ -37,6 +38,7 @@ mongoose
 
 //Routes
     app.use("./routes/api/users", users);
+    app.use("./routes/api/administrators", administrators);
 
 //Heroku Port
     const port = process.env.PORT || 5000; 

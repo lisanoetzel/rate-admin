@@ -15,7 +15,7 @@ const administrator = require('../../models/administrators');
 //@access Public
 
 router.post('/survey', (req, res) => {
-   // Survey Input
+    // Survey Input
     const { errors, isValid } = validateSurveyInput(req.body);
     //Check validation
     if (!isValid) {
@@ -34,60 +34,59 @@ router.post('/survey', (req, res) => {
                 survey_q2: req.body.survey_q2,
                 survey_q3: req.body.survey_q3,
             });
-//             //Hashing password before saving in DB
-//             bcrypt.genSalt(10, (err, salt) => {
-//                 bcrypt.hash(newUser.password, salt, (err, hash) => {
-//                     if (err) throw err;
-//                     newUser.password = hash;
-//                     newUser
-//                         .save()
-//                         .then(user => res.json(user))
-//                         .catch(err => res.json(err));
-//                 });
-//             });
-//         }
-//     });
-// });
-
-    //@route POST api/users/login
-    //@desc Login user & return JWT token
-    //@access Public
-    router.post('/login', (req, res) => {
-        //Form validation
-        const { errors, isValid } = validateLoginInput(req.body);
-        //Check validation
-        if (!isValid) {
-            return res.status(400).json(errors);
+            //             //Hashing password before saving in DB
+            //             bcrypt.genSalt(10, (err, salt) => {
+            //                 bcrypt.hash(newUser.password, salt, (err, hash) => {
+            //                     if (err) throw err;
+            //                     newUser.password = hash;
+            //                     newUser
+            //                         .save()
+            //                         .then(user => res.json(user))
+            //                         .catch(err => res.json(err));
+            //                 });
         }
-        const email = req.body.email;
-        const password = req.body.password;
-        //Find user by email
-        user.findOne({ email }).then(user => {
-            //Check if user exists
-            if (!user) {
-                return res.status(404).json({ emailnotfound: 'Email not found' });
-            };
-        });
+    });
+});
 
-        //@route POST api/users/survey
-    //@desc user survey & return JWT token
-    //@access Public
-    router.post('/survey', (req, res) => {
-        //Form validation
-        const { errors, isValid } = validateSurveyInput(req.body);
-        //Check validation
-        if (!isValid) {
-            return res.status(400).json(errors);
-        }
-        const survey = req.body.email;
-        const password = req.body.password;
-        //Find user by email
-        user.findOne({ email }).then(user => {
-            //Check if user exists
-            if (!user) {
-                return res.status(404).json({ emailnotfound: 'Email not found' });
-            };
-        });
+            //@route POST api/administrators/survey
+            //@desc Administrator data
+            //@access Public
+            // router.post('/login', (req, res) => {
+            //     //Form validation
+            //     const { errors, isValid } = validateLoginInput(req.body);
+            //     //Check validation
+            //     if (!isValid) {
+            //         return res.status(400).json(errors);
+            //     }
+            //     const email = req.body.email;
+            //     const password = req.body.password;
+            //     //Find user by email
+            //     user.findOne({ email }).then(user => {
+            //         //Check if user exists
+            //         if (!user) {
+            //             return res.status(404).json({ emailnotfound: 'Email not found' });
+            //         };
+            //     });
 
-    });  //moved from ln 45
-module.exports = router;
+                //@route POST api/administrators/survey data
+                //@desc administrator survey data & return JWT token
+                //@access Public
+                router.post('/survey', (req, res) => {
+                    //Form validation
+                    const { errors, isValid } = validateSurveyInput(req.body);
+                    //Check validation
+                    if (!isValid) {
+                        return res.status(400).json(errors);
+                    }
+                    // const survey = req.body.survey;
+                    // // const password = req.body.password;
+                    // //Find user by email
+                    // administrator.findOne({ survey }).then(administrator => {
+                    //     //Check if administrator exists
+                    //     if (!administrator) {
+                    //         return res.status(404).json({ administratorSurveyNotFound: 'Administrator survey not found' });
+                    //     };
+                    // });
+
+                });  //moved from ln 45
+            module.exports = router;

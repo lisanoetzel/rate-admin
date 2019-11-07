@@ -7,7 +7,7 @@ const isEmpty = require('is-empty');
 // Convert empty fields to empty string to use validator functions
     data.survey_name = !isEmpty(data.survey_name) ? data.survey_name : '';
     data.survey_title = !isEmpty(data.survey_title) ? data.survey_title : '';
-    data.survey_institution = !isEmpty(data.institution) ? data.institution : '';
+    data.survey_institution = !isEmpty(data.survey_institution) ? data.survey_institution : '';
     data.survey_term = !isEmpty(data.survey_term) ? data.survey_term : '';
     data.survey_q1 = !isEmpty(data.survey_q1) ? data.survey_q1 : '';
     data.survey_q2 = !isEmpty(data.survey_q2) ? data.survey_q2 : '';
