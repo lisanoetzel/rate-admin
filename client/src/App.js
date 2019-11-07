@@ -8,6 +8,8 @@ import About from "./components/aboutComponent";
 import Account from "./components/accountComponent";
 import Survey from "./components/surveyComponent";
 
+import logo from "./RMA logo2.jpg";
+
 
 class App extends Component {
   render() {
@@ -15,6 +17,7 @@ class App extends Component {
       <Router>
          <div className="container">
            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+           <img src={logo} width="30" height="30" alt="RateMyAdmin Logo" />
               <Link to="/" className="navbar-brand"><strong>Rate My Administrator</strong></Link>
               <div className="collapse navbar-collapse">
                 <ul className="navbar-nav mr-auto">
