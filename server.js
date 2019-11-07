@@ -2,16 +2,11 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-// const cors = require('cors');
-// const surveyRoute = express.Router();
 const passport = require("passport");
 
 const users = require('./routes/api/users');
-// const PORT = 4000;
 
 const app = express();
-
-// let ratemyadministrator = require('./ratemyadministrator.model');
 
 //Bodyparser middleware
 app.use(
@@ -41,7 +36,7 @@ mongoose
     require("./config/passport") (passport);
 
 //Routes
-    app.use("/api/users", users);
+    app.use("./routes/api/users", users);
 
 //Heroku Port
     const port = process.env.PORT || 5000; 

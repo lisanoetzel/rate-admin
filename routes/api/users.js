@@ -37,11 +37,8 @@ router.post('/register', (req, res) => {
                     user
                         .create(newUser)
                         .then(user => res.json(user))
-<<<<<<< HEAD
                         .catch(err => res.json(err)); //will give error in Postman in JSON format
-=======
-                        .catch(err => res.json(err));
->>>>>>> 185aa5de6a6d08de5a0cc1dbe572a29ac98db47f
+                        
                 });
             });
         }
