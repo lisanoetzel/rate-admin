@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export default class Account extends Component {
+export default class Login extends Component {
 
     constructor(props) {
         super(props);
@@ -32,7 +32,7 @@ export default class Account extends Component {
     render(){
         return (
             <div className="container">
-                <h2>Create An Account</h2>
+                <h2>Create An Account Here!</h2>
                 <div style = {{marginTop: 10}}>
                     <form onSubmit = {this.onSubmit}>
                         <div className = "form-group">
@@ -72,7 +72,7 @@ export default class Account extends Component {
                             />
                         </div>
                         <div className="form-group">
-                            <input type="submit" value="Create Account" className="btn btn-primary"
+                            <input type="submit" value="Create Account" className="btn btn-success"
                             />
                         </div>
                     </form>
