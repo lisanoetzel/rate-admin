@@ -37,13 +37,16 @@ mongoose
     require("./config/passport") (passport);
 
 //Routes
-    app.use("./routes/api/users", users);
-    app.use("./routes/api/administrators", administrators);
+    app.use("/api/users", users);
+    app.use("/api/administrators", administrators);
 
 //Heroku Port
     const port = process.env.PORT || 5000; 
 
     app.listen(port, () => console.log(`Server is operating on port ${port} !`));
+
+    users
+    administrators
 
 // app.use(cors());
 // app.use(bodyParser.json());
