@@ -21,8 +21,8 @@ router.post('/survey', (req, res) => {
     if (!isValid) {
         return res.status(400).json(errors);
     }
-    administrator.findOne({ administrator: req.body.administrator }).then(DBuser => {
-        if (DBuser) {
+    administrator.findOne({ administrator: req.body.administrator }).then(DBadministrator => {
+        if (DBadministrator) {
             return res.status(400).json({ administrator: 'Admin already exists' });
         } else {
             const administrator = new administrator({
@@ -78,15 +78,15 @@ router.post('/survey', (req, res) => {
                     if (!isValid) {
                         return res.status(400).json(errors);
                     }
-                    // const survey = req.body.survey;
-                    // // const password = req.body.password;
-                    // //Find user by email
-                    // administrator.findOne({ survey }).then(administrator => {
-                    //     //Check if administrator exists
-                    //     if (!administrator) {
-                    //         return res.status(404).json({ administratorSurveyNotFound: 'Administrator survey not found' });
-                    //     };
-                    // });
+                    const survey = req.body.survey;
+                    // const password = req.body.password;
+                    //Find user by email
+                    administrator.findOne({ survey }).then(administrator => {
+                        //Check if administrator exists
+                        if (!administrator) {
+                            return res.status(404).json({ administratorSurveyNotFound: 'Administrator survey not found' });
+                        };
+                    });
 
                 });  //moved from ln 45
             module.exports = router;

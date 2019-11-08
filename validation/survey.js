@@ -36,7 +36,7 @@ const isEmpty = require('is-empty');
     if (validator.isEmpty(data.survey_q2)){
     errors.survey_q2 = 'Survey question two is required';
 
-//Question 1 check
+//Question 3 check
     if (validator.isEmpty(data.survey_q1)){
         errors.survey_q3 = 'Survey question three is required';
     };

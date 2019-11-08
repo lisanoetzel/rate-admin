@@ -20,10 +20,10 @@ const isEmpty = require('is-empty');
     }   else if (!validator.isEmail(data.email)){
         errors.email = 'Email is invalid';
     }
-//Username check
-    // if (validator.isEmpty(data.username)){
-    //     errors.username = 'Username is required';
-    // }
+// Username check
+    if (validator.isEmpty(data.username)){
+        errors.username = 'Username is required';
+    }
 //Password check
     if (validator.isEmpty(data.password)){
         errors.password = 'Password is required';
