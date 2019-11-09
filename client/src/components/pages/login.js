@@ -7,15 +7,28 @@ export default class Login extends Component {
 //Name
         this.onChangeUserName  = this.onChangeUserName.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
+
 //Email
         this.onChangeUserEmail  = this.onChangeUserEmail.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-     //Name   
+
+//UserID
+        this.onChangeUserUserId  = this.onChangeUserId.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+
+//Password
+        this.onChangeUserPassword  = this.onChangeUserPassword.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);        
+        
+//Name   
         this.state = {
             user_name: '',
             account_completed: false,
             user_email: '',
-            account_completed: false
+            account_completed: false,
+            user_id: '',
+            account_completed: false,
+            user_password: ''
         }
     }
     onChangeUserName(e) {
@@ -23,6 +36,23 @@ export default class Login extends Component {
             user_name: e.target.value
         });
     }
+    onChangeUserEmail(e) {
+        this.setState({
+            user_email: e.target.value
+        });
+    }
+    onChangeUserId(e) {
+        this.setState({
+            user_id: e.target.value
+        });
+    }
+
+    onChangeUserPassword(e) {
+        this.setState({
+            user_password: e.target.value
+        });
+    }
+
     onSubmit(e) {
         e.preventDefault();
 
