@@ -4,31 +4,37 @@ export default class Login extends Component {
 
     constructor(props) {
         super(props);
-
-        this.onChangeUserInfo  = this.onChangeUserInfo.bind(this);
+//Name
+        this.onChangeUserName  = this.onChangeUserName.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-
+//Email
+        this.onChangeUserEmail  = this.onChangeUserEmail.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+     //Name   
         this.state = {
-            user_info: '',
+            user_name: '',
+            account_completed: false,
+            user_email: '',
             account_completed: false
         }
     }
-    onChangeUserInfo(e) {
+    onChangeUserName(e) {
         this.setState({
-            user_info: e.target.value
+            user_name: e.target.value
         });
     }
     onSubmit(e) {
         e.preventDefault();
 
         console.log(`User Info submitted:`);
-        console.log(`User Response: ${this.state.user_info}`);
+        console.log(`User Response: ${this.state.user_name}`);
 
         this.setState({
-            user_info:'',
+            user_name:'',
             account_completed: false
         })
     }
+//
     render(){
         return (
             <div className="container">
@@ -40,8 +46,8 @@ export default class Login extends Component {
                             <input type="text" 
                                 className="form-control" 
                                 id="userName"
-                                value = {this.state.user_info}
-                                onChange={this.onChangeUserInfo}
+                                value = {this.state.user_name}
+                                onChange={this.onChangeUserName}
                             />
                         </div>  
                         <div className = "form-group">
@@ -49,8 +55,8 @@ export default class Login extends Component {
                             <input type="text" 
                                 className="form-control" 
                                 id="userEmail"
-                                value = {this.state.user_info}
-                                onChange={this.onChangeUserInfo}
+                                value = {this.state.user_email}
+                                onChange={this.onChangeUserEmail}
                             />
                         </div>
                         <div className = "form-group">
@@ -58,8 +64,8 @@ export default class Login extends Component {
                             <input type="text" 
                                 className="form-control"
                                 id="userID" 
-                                value = {this.state.user_info}
-                                onChange={this.onChangeUserInfo}
+                                value = {this.state.user_id}
+                                onChange={this.onChangeUserId}
                             />
                         </div>
                         <div className = "form-group">
@@ -67,8 +73,8 @@ export default class Login extends Component {
                             <input type="text" 
                                 className="form-control"
                                 id="userPassword" 
-                                value = {this.state.user_info}
-                                onChange={this.onChangeUserInfo}
+                                value = {this.state.user_password}
+                                onChange={this.onChangeUserPassword}
                             />
                         </div>
                         <div className="form-group">
