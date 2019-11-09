@@ -8,8 +8,6 @@ import About from "./components/aboutComponent";
 import Account from "./components/accountComponent";
 import Survey from "./components/surveyComponent";
 
-import logo from "./RMA logo2.jpg";
-
 
 class App extends Component {
   render() {
