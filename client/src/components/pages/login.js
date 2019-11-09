@@ -56,12 +56,23 @@ export default class Login extends Component {
     onSubmit(e) {
         e.preventDefault();
 
-        console.log(`User Info submitted:`);
+        console.log(`User Name submitted:`);
         console.log(`User Response: ${this.state.user_name}`);
+        console.log(`User Email submitted:`);
+        console.log(`User Response: ${this.state.user_email}`);
+        console.log(`User ID submitted:`);
+        console.log(`User Response: ${this.state.user_id}`);
+        console.log(`User Passwrd submitted:`);
+        console.log(`User Response: ${this.state.user_password}`);
 
         this.setState({
-            user_name:'',
-            account_completed: false
+            user_name: '',
+            account_completed: false,
+            user_email: '',
+            account_completed: false,
+            user_id: '',
+            account_completed: false,
+            user_password: ''
         })
     }
 //
